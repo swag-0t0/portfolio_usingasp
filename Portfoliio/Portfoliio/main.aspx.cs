@@ -18,6 +18,7 @@ namespace Portfoliio
         string strcon = ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
+            //For adddinng into projects
             try
             {
              string query = "SELECT Name,Details,ImagePath,Link FROM Projects";
@@ -62,10 +63,56 @@ namespace Portfoliio
             {
                 Response.Write(ex.ToString());  
             }
-            
+
+            //For adding into services
+
+            try
+            {
+                string query = "SELECT heading,details,link,font FROM services";
+
+                using (SqlConnection connection = new SqlConnection(strcon))
+                {
+                    SqlCommand command = new SqlCommand(query, connection);
+
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        string heading = reader["heading"].ToString();
+                        string details = reader["details"].ToString();
+                        string link = reader["link"].ToString();
+                        string font = reader["font"].ToString();
+
+                        // Constructing HTML dynamically for my each project
+                        string projectHtml = $@"
+                      <div class='service'>
+                        <i class='{font}'></i>
+                        <h4>{heading}</h4>
+                        <p>{details} </p>  
+                        <a href='{link}' class=""btn"">Learn more</a>
+                        
+                     </div>";
+
+                        // Appending my HTML 
+                        HtmlGenericControl container = (HtmlGenericControl)FindControl("servicelist");
+                        container.InnerHtml += projectHtml;
+                    }
+
+                    reader.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.Write(ex.ToString());
+            }
+
+
+
 
         }
-   protected void sendbtn_Click(object sender, EventArgs e)
+
+        protected void sendbtn_Click(object sender, EventArgs e)
     {
             try
             {

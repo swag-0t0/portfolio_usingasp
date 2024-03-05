@@ -45,10 +45,29 @@ namespace Portfoliio
             {
                 Response.Write(ex.ToString());
             }
+ 
+        }
+        protected void serviceSave(object sender, EventArgs e)
+        {
+            try
+            { 
+            SqlConnection connect = new SqlConnection(connectionString);
+            connect.Open();
+            SqlCommand command = new SqlCommand("INSERT INTO services (heading,details,link,font) VALUES (@heading,@details,@link,@font)", connect);
 
+            command.Parameters.AddWithValue("@heading", heading.Value);
+            command.Parameters.AddWithValue("@details", service_details.Value);
+            command.Parameters.AddWithValue("@link", learnmore_link.Value);
+            command.Parameters.AddWithValue("@font", font.Value);
 
+            command.ExecuteNonQuery();
+            connect.Close();
 
-          
+            }catch(Exception ex)
+            {
+                Response.Write(ex.ToString()+"\n");
+            }
+
         }
 
         protected void redirecttomain(object sender, EventArgs e)
@@ -62,6 +81,37 @@ namespace Portfoliio
             }
 
         }
+
+        //To delete from Project
+
+        protected void DeleteProject(object sender, EventArgs e) 
+        {
+            string projectName = dltname.Value; 
+
+            SqlConnection connect = new SqlConnection(connectionString);
+            connect.Open();
+            SqlCommand cmd = new SqlCommand("DELETE FROM [dbo].[Projects] WHERE [Name]=@Name", connect);
+            cmd.Parameters.AddWithValue("@Name", projectName); 
+            cmd.ExecuteNonQuery(); // Executeing the SQL command
+            Response.Redirect("~/Webform3.aspx");
+            connect.Close();
+
+        }
+
+        protected void DeleteService(object sender, EventArgs e)
+        {
+            string projectName = dltheading.Value;
+
+            SqlConnection connect = new SqlConnection(connectionString);
+            connect.Open();
+            SqlCommand cmd = new SqlCommand("DELETE FROM [dbo].[services] WHERE [heading]=@heading", connect);
+            cmd.Parameters.AddWithValue("@heading", projectName);
+            cmd.ExecuteNonQuery(); // Executeing the SQL command
+            Response.Redirect("~/Webform3.aspx");
+            connect.Close();
+
+        }
+
 
     }
 }

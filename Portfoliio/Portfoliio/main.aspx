@@ -31,7 +31,7 @@
                 <li><a href="#services">Services</a></li>
                 <li><a href="#FAQ">FAQ<i class='bx bx-message-square-dots bx-tada'></i></a></li>
 
-                <li><a href="#">Contact</a></li>
+                <li><a href="#FAQ">Contact</a></li>
 
             </ul>
             <i class='bx bx-menu' style='color: #ffffff' onclick="openbar()"></i>
@@ -165,8 +165,8 @@
                 <div>Services I provide</div>
             </div>
 
-            <div class="servicelist">
-                <div>
+            <div class="servicelist" id="servicelist" runat="server">
+                <div class="service">
                     <i class="fa-solid fa-headset"></i>
                     <h4>Web
                                     <br>
@@ -176,9 +176,9 @@
                                 ratione architecto impedit tempore corrupti et
                                 praesentium iure, quod eum odio est voluptate incidunt
                             </p>
-                        <a href="#" class="btn">Learn more</a>
+                        <a href="https://www.w3schools.com/whatis/" class="btn">Learn more</a>
                 </div>
-                <div>
+                <div class="service">
                     <i class="fa-solid fa-laptop-code"></i>
                     <h4>Devloping<br>
                         a Application</h2>
@@ -187,9 +187,9 @@
                                 ratione architecto impedit tempore corrupti et
                                 praesentium iure, quod eum odio est voluptate incidunt
                             </p>
-                        <a href="#" class="btn">Learn more</a>
+                        <a href="https://www.w3schools.com/appml/" class="btn">Learn more</a>
                 </div>
-                <div>
+                <div class="service">
                     <i class="fa-solid fa-cubes"></i>
                     <h4>UI/UX
                                     <br>
@@ -199,12 +199,11 @@
                                 ratione architecto impedit tempore corrupti et
                                 praesentium iure, quod eum odio est voluptate incidunt
                             </p>
-                        <a href="#" class="btn">Learn more</a>
+                        <a href="https://www.w3schools.com/css/css3_user_interface.asp" class="btn">Learn more</a>
                 </div>
 
             </div>
         </div>
-
 
     </div>
 
@@ -223,7 +222,7 @@
                             It was one of my lab projects.
                         </p>
                         <div>
-                            <a href="#"><i class='bx bx-link-external'></i></a>
+                            <a href="https://github.com/swag-0t0/portfolio_usingasp.git"><i class='bx bx-link-external'></i></a>
 
                         </div>
                         <!--icons from boxicons-->
@@ -239,7 +238,7 @@
                             This app is made in DESKTOP framewrok.
                             It was the project of my advanced programming lab
                         </p>
-                        <div><a href="#"><i class='bx bx-link-external'></i></a></div>
+                        <div><a href="https://github.com/swag-0t0/Find_My_Tutor.git"><i class='bx bx-link-external'></i></a></div>
                     </div>
 
                 </div>
@@ -255,7 +254,7 @@
                             this project was for my OOP lab
                         </p>
                         <div>
-                            <a href="#"><i class='bx bx-link-external'></i></a>
+                            <a href="https://github.com/swag-0t0/OOP_Project.git"><i class='bx bx-link-external'></i></a>
                         </div>
                     </div>
 
@@ -313,11 +312,11 @@
                 <p><i class='bx bxl-gmail bx-tada'></i>Email:Swagotodas3@gmail.com</p>
                 <p><i class='bx bxs-phone bx-tada bx-rotate-90'></i>Phone:01310187222</p>
                 <div class="contact-icons">
-                    <a href="#"><i class='bx bxl-facebook'></i></a>
+                    <a href="https://www.facebook.com/swagotodas.brinto"><i class='bx bxl-facebook'></i></a>
                     <!--icons from boxicons-->
                     <a href="#"><i class='bx bxl-instagram'></i></a>
                     <a href="#"><i class='bx bxl-linkedin'></i></a>
-                    <a href="#"><i class='bx bxl-github'></i></a>
+                    <a href="https://github.com/swag-0t0"><i class='bx bxl-github'></i></a>
                 </div>
 
             </div>
